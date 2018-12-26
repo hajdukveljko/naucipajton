@@ -1,29 +1,24 @@
 def ref_search(in_list, x):
-    if len(in_list) < 1 :
-        return -1
-    if x < in_list[0] or x > in_list[-1]:
-        return -1
-    if len(in_list)==1:
-        return 0
-    n = len(in_list)//2
-    indx1 = 0
-    indx2 = len(in_list)
-    d = (indx2-indx1)//2
+    for i in range(0, len(in_list)):
+        if in_list[i]==x:
+            return i
+    return  -1
 
-    while d >= 1:
 
+def my_search(in_list, x):
+    if len(in_list) == 0:
+        return -1
+    x1 = 0
+    x2 = len(in_list) - 1
+
+    while x1 <= x2:
+        n = (x1 + x2) // 2
         if x == in_list[n]:
             return n
         elif x > in_list[n]:
-            indx1 = n
-            n = n + d
+            x1 = n + 1
         else:
-            indx2 = n
-            n = n - d
-        d = (indx2-indx1)//2
-
-
-
-print ref_search([22, 23],22)
-def my_search(in_list, x):
+            x2 = n - 1
     return -1
+
+
