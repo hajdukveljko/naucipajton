@@ -7,12 +7,13 @@ Fajl:
 "I like to read. You like to sing."
 
 Output:
-*like    2
-*to  2
-*I   1
-*You 1
-*read.    1
-*sing.    1
-
+```
+like    2
+to  2
+I   1
+You 1
+read.    1
+sing.    1
+```
 
 Пример текст фајла на коме треба извршити програм: sample.txt
