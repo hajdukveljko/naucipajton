@@ -1,0 +1,13 @@
+def countwords():
+    fhand = open('tramp.txt', encoding = 'utf8')
+    count = {}
+    for line in fhand:
+        line = line.rstrip()
+    for word in line:
+        word = line.split()
+        if word not in count:
+            count[word]= 1
+        else:
+            count[word]=count[word]+1
+    print (count)
+countwords()
