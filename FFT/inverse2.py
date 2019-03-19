@@ -37,21 +37,16 @@ plt.ylabel('Amplitude')
 plt.xlabel('Frequency [Hz]')
 plt.show()
 
-# find point of freq 1000
-for i in range(len(fft_real)):
-    if sampFreq/N * i >= float(1000):
-        print(i)
-        break
-
+i = math.ceil(1000*N/sampFreq) # find point of freq 1000
 my_fft = fft_orig
 my_fft[0:i] = 0
 my_fft[-i+1:] = 0
-
 mx_new = mx
 mx_new[:i] = 0
 new_sig = np.fft.ifft(my_fft)
 print(new_sig.dtype)
 new_sig = new_sig.astype(int16)
+wavfile.write('hromatic_1000_.wav', sampFreq, new_sig)
 
 fig,ax = plt.subplots()
 plt.plot(f, mx_new,linewidth=5)
@@ -62,4 +57,3 @@ plt.ylabel('Amplitude')
 plt.xlabel('Frequency [Hz]')
 plt.show()
 
-wavfile.write('hromatic_1000_cut.wav', sampFreq, new_sig)
