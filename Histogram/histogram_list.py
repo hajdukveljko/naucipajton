@@ -8,8 +8,9 @@ histogram = []
 for i in range (0, 256):
     histogram.append(0)
 for r,g,b in pix_val:
-    histogram[r] += 1
-# print(histogram)
+    histogram[r] += 1  
+
+print(histogram)
 
 max_val = 0
 for pix in histogram:
@@ -27,4 +28,5 @@ for val in histogram:
     y = im_size_y - (val*im_size_y/max_val)
     draw.line((x,im_size_y,x,y), fill=255)
     x += 1
+
 hist.show()
